@@ -13,5 +13,3 @@ require "bare_minimum_checks"
 # require "irb"
 # IRB.start(__FILE__)
 
-safe_push = BareMinimumChecks::SafePush.new
-safe_push.run_specs

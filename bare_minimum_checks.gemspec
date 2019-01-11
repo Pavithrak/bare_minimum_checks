@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Attaches git hooks to ensure tests are run for the file that are changed"
   spec.homepage      =  "http://robdodson.me"
   spec.license       = "MIT"
-  spec.add_dependency "git"
+  spec.add_dependency "git", "1.5.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

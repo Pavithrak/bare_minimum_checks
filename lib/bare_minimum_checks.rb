@@ -1,11 +1,11 @@
-require "bare_minimum_checks/version"
-require 'bare_minimum_checks/project'
+# require_relative "bare_minimum_checks/version"
+require_relative 'bare_minimum_checks/project'
 
 module BareMinimumChecks
     class SafePush
       def run_specs
         project = BareMinimumChecks::Project.new
-        puts project.local_changes
+        project.run_specs
       end
     end
 end
