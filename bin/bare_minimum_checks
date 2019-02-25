@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require_relative "../lib/bare_minimum_checks"
+require 'bare_minimum_checks'
 
 safe_push = BareMinimumChecks::SafePush.new
 safe_push.run_specs

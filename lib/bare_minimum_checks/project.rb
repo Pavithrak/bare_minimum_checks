@@ -15,14 +15,20 @@ module BareMinimumChecks
       end
     end
 
-    # private
+    private
 
     def local_changes
-      g = Git.open(".")
+      g = Git.open('.')
       local_changes = g.diff.map(&:path)
-      branch_name = "origin/#{g.current_branch}"
+      current_branch_name = g.current_branch
+      branch_name = is_local_branch?(current_branch_name) ? 'origin/master' : "origin/#{current_branch_name}"
       local_changes.concat g.diff(branch_name, 'HEAD').map(&:path)
       local_changes.uniq
+    end
+
+    def is_local_branch?(branch_name)
+      count = `git remote show origin | grep #{branch_name} | wc -l`
+      count.to_i == 0
     end
   end
 end

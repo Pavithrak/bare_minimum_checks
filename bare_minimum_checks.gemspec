@@ -1,6 +1,8 @@
-
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+#
+# lib = File.expand_path("../lib", __FILE__)
+# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# $LOAD_PATH.unshift("/Users/pavithra/.rvm/gems/ruby-2.3.8/gems")
+# puts $LOAD_PATH
 require "bare_minimum_checks/version"
 
 Gem::Specification.new do |spec|
