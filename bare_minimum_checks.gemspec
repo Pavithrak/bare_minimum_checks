@@ -12,17 +12,13 @@ Gem::Specification.new do |spec|
   spec.email         = ["pavikrish2988@gmail.com"]
 
   spec.summary       = "Run tests for files modified"
-  spec.description   = "Attaches git hooks to ensure tests are run for the file that are changed"
-  spec.homepage      =  "http://robdodson.me"
+  spec.description   = "Provides a cli to run tests for the files that have been modified"
   spec.license       = "MIT"
   spec.add_dependency "git", "1.5.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
-    spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/Pavithrak/bare_minimum_checks"
     spec.metadata["changelog_uri"] = "https://github.com/Pavithrak/bare_minimum_checks"
   else

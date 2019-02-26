@@ -1,4 +1,4 @@
-# require_relative "bare_minimum_checks/version"
+require_relative "bare_minimum_checks/version"
 require_relative 'bare_minimum_checks/project'
 
 module BareMinimumChecks
