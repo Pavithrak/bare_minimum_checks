@@ -1,38 +1,19 @@
 # BareMinimumChecks
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bare_minimum_checks`. To experiment with that code, run `bin/console` for an interactive prompt.
+BareMinimumChecks is a commandline utility that, when run from one of your projects dir that is version controlled by git, identifies the files that have been modified and runs the only those tests that corresponds to the files changed. 
 
-TODO: Delete this and the text above, and describe your gem
+Currently it is only supported for ruby projects, where the test corresponding to the files are named file_name_spec.rb.
 
+The overall idea is to have a config.yml file that takes inputs of test name patterns, files to ignore, and the command that should be used to run the selected tests.
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```ruby
-gem 'bare_minimum_checks'
+gem install bare_minimum_checks
 ```
 
-And then execute:
+And then cd into one of your projects (ruby for now) and run
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install bare_minimum_checks
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bare_minimum_checks.
+    bare_minimum_checks
 
 ## License
 
