@@ -15,31 +15,32 @@ module BareMinimumChecks
         file_name = File.basename(full_file_name, ".*")
         paths = find_files["paths"]
         test_files = paths.map do |path|
-          test_file = path.gsub("{path_to_file}", file_path)
-          .gsub("{file_name}", file_name)
-          if File.file?(test_file)
+          test_file = path.gsub("{path_to_file}", file_path).gsub("{file_name}", file_name)
+          if File.file? test_file
             test_file
           else
-            puts "File #{test_file} not found. Unable to test changes in #{full_file_name}"
             nil
           end
         end.compact
+        if test_files.empty?
+          puts "No test file found for #{full_file_name}"
+        end
         specs.push(*test_files)
         specs
       end
     end
 
-    def run_specs
-      specs = local_changes.reduce([]) do |specs, file_path|
-        arr = specs.concat FileNameStyle.camel_case.get_test_file_name(file_path)
-        arr.concat FileNameStyle.snake_case.get_test_file_name(file_path)
-      end
-      specs.each do |spec_file|
-        puts "Running #{spec_file}"
-        system("rspec #{spec_file}")
-
+    def run_tests(files)
+      run_config = @config["tests"]["run"]
+      command = run_config["command"]
+      if(command)
+        puts "Running #{files}"
+        system("#{command} #{files.join(" ")}")
+      else
+        puts "No command found to run the tests for #{files}"
       end
     end
+
 
     private
 
