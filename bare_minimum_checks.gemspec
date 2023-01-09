@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Run tests for files modified"
   spec.description   = "Provides a cli to run tests for the files that have been modified"
   spec.license       = "MIT"
-  spec.add_dependency "git", "1.5.0"
+  spec.add_dependency "git", "1.13.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
